@@ -1,0 +1,11 @@
+flask
+flask-cors
+tensorflow
+pillow
+requests
+google
+transformers
+datasets
+evaluate
+jiwer
+google.generativeai

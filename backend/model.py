@@ -3,7 +3,6 @@ import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold 
 
 gemini_api = "AIzaSyCbHdHoBgfs958jOQODX_a7IwKkteoqUBA"
-sesarch_api = "AIzaSyDq2i5qm_7XO8W-OmNr_QAtd3uLoRgdc1s"
 
 genai.configure(api_key=gemini_api)
 
@@ -24,7 +23,7 @@ def get_image_caption(image_url):
 
 def describe_image(image_caption):
     prompt = f"""
-    Given the image caption "{image_caption}", describe the image in more detail in 300 words. This is likely to be an image of a food item, provide the name of the dish, espcially the origins of the dish and the culture, and any other relevant information. If it is not a food item, tell the user that you can only provide information on food items so. Do not say that your input is a caption.
+    Given the image caption "{image_caption}", describe the image in more detail in 100 words. This is likely to be an image of a food item, provide the name of the dish, espcially the origins of the dish and the culture, and any other relevant information. If it is not a food item, tell the user that you can only provide information on food items so. Do not say that your input is a caption.
 
     Your response should be in the following format:
     {{
