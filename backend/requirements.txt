@@ -9,3 +9,4 @@ datasets
 evaluate
 jiwer
 google.generativeai
+tf-keras
