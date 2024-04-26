@@ -85,7 +85,7 @@ function App() {
         {
           !error && result && !isLoading &&
           <div id="output-container">
-            <img src={url} alt="input-image" id="input-image" />
+            <img src={result.image} alt="input-image" id="input-image" />
 
             <caption><i>{description.name} from {description.origin}</i></caption>
             <p id="description">{description.description}</p>
