@@ -23,7 +23,7 @@ def api():
         })
     caption = model.get_image_caption(data['url'])
     description = model.describe_image(caption)
-    more_info = json.loads(model.generate_query(description))
+    more_info = json.loads(model.generate_query(description , data.get("city") + " " + data.get("state")))
 
     print(more_info)
     search_res = [i for i in search(more_info["query"][0], num=5, stop=5, pause=2)]

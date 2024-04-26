@@ -25,11 +25,11 @@ def describe_image(image_caption):
     prompt = f"""
     Given the image caption "{image_caption}", describe the image in more detail in 100 words. This is likely to be an image of a food item, provide the name of the dish, espcially the origins of the dish and the culture, and any other relevant information. If it is not a food item, tell the user that you can only provide information on food items so. Do not say that your input is a caption.
 
-    Your response should be in the following format:
+    Your response should be in the following format and strictly in this format only:
     {{
         "name": "Name of the dish",
         "origin": "Origins of the dish",
-        "description": "Description of the dish
+        "description": "Description of the dish talk about the cultural value of the dish and any other relevant information"
     }}
 """
     
@@ -37,12 +37,12 @@ def describe_image(image_caption):
 
     return response.text.replace("`", "")
 
-def generate_query(input):
+def generate_query(input, position):
     prompt = f"""
-    Construct a JSON object that contains some good keywords for a google search about the following information: {input}. The JSON object should be in the following format and strictly in this format only :
+    Construct a JSON object that contains some good keywords for a google search about the following information: {input}. The user is located in {position}. The JSON object should be in the following format and strictly in this format only:
     START OF FORMAT
     {{
-        "query": [2 most relevant words], 
+        "query": [Some search terms here i.e 'where to eat...'"], 
     }}
     END OF FORMAT
     The "query" fields are the words that you think would be relevant to find more information about the food.
